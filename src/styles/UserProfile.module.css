@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .info {
+    flex-grow: 1;
+  }
+  

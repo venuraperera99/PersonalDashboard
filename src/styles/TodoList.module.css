@@ -1,0 +1,24 @@
+.container {
+    margin-bottom: 20px;
+  }
+  
+  .inputContainer {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .inputContainer input {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .taskList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .taskList li button {
+    margin-left: 10px;
+  }
+  
