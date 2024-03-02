@@ -10,9 +10,9 @@ const Dashboard = () => {
       <h2>Dashboard</h2>
       <div className={styles.grid}>
         <UserProfile
-          name="John Doe"
-          email="johndoe@example.com"
-          profilePicture="https://via.placeholder.com/150"
+          name="Venura Perera"
+          email="venura.perera@mail.utoronto.ca"
+          profilePicture="https://randomuser.me/api/portraits/men/1.jpg"
         />
         <TodoList />
         <Weather />
