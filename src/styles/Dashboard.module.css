@@ -63,5 +63,6 @@
     flex-basis: auto;
     max-height: none;
     overflow-y: visible;
+    width: 80%;
   }
 }
