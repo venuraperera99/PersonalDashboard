@@ -34,43 +34,46 @@ const TodoList = () => {
   };
 
   return (
-    <div className={styles.todoList}>
-      <h3>Todo List</h3>
+    <div className={styles.todoListContainer}>
+      <h2 className={styles.title}>Todo List</h2>
       <div className={styles.addTask}>
         <input
           type="text"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           placeholder="Enter task..."
+          className={styles.inputTask}
         />
-        <button onClick={handleAddTask}>Add Task</button>
+        <button onClick={handleAddTask} className={styles.addButton}>Add Task</button>
       </div>
-      <table className={`${styles.table} table`}>
-        <thead>
-          <tr>
-            <th>Task Name</th>
-            <th>Complete</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tasks.map((task) => (
-            <tr key={task.id}>
-              <td>{task.task}</td>
-              <td>
-                <input
-                  type="checkbox"
-                  checked={task.completed}
-                  onChange={() => handleToggleComplete(task.id)}
-                />
-              </td>
-              <td>
-                <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
-              </td>
+      <div className={styles.taskTable}>
+        <table>
+          <thead>
+            <tr>
+              <th>Task Name</th>
+              <th>Complete</th>
+              <th>Delete</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {tasks.map((task) => (
+              <tr key={task.id} className={task.completed ? styles.completedTask : ''}>
+                <td>{task.task}</td>
+                <td>
+                  <input
+                    type="checkbox"
+                    checked={task.completed}
+                    onChange={() => handleToggleComplete(task.id)}
+                  />
+                </td>
+                <td>
+                  <button onClick={() => handleDeleteTask(task.id)} className={styles.deleteButton}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

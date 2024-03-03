@@ -12,8 +12,8 @@ const Dashboard = () => {
         <div className={styles.leftColumn}>
           <div className={`${styles.card} ${styles.userProfileCard}`}>
             <UserProfile
-              name="John Doe"
-              email="johndoe@example.com"
+              name="Venura Perera"
+              email="venura.perera@mail.utoronto.ca"
               profilePicture="https://randomuser.me/api/portraits/men/1.jpg"
             />
           </div>

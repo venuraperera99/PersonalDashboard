@@ -1,5 +1,6 @@
 .dashboard {
   padding: 20px;
+  background-color: #f0f0f0;
 }
 
 .grid {
@@ -31,7 +32,7 @@
 
 .todoListCard {
   flex-basis: 100%;
-  max-height: calc(100vh - 220px);
+  max-height: calc(100vh - 20px);
   overflow-y: auto;
 }
 
