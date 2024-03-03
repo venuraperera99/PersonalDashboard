@@ -1,6 +1,6 @@
 # React Personal Dashboard
 
-This project is a personal dashboard application built using React.js. It displays a user's personal information, a to-do list, and the current weather in their city. The main objective of this project was to assess proficiency in React fundamentals, state management, and interaction with external APIs.
+This project is a personal dashboard application built using React.js. It displays a user's personal information, a to-do list, and the current weather in their city. 
 
 ## Project Structure
 
