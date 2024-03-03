@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# React Personal Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a personal dashboard application built using React.js. It displays a user's personal information, a to-do list, and the current weather in their city. The main objective of this project was to assess proficiency in React fundamentals, state management, and interaction with external APIs.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+The project is structured as follows:
 
-### `npm start`
+- `public`: Contains the public assets and `index.html` file.
+- `src`:
+  - `components`: Contains reusable components such as UserProfile, TodoList, and Weather.
+  - `pages`: Contains Home and Dashboard pages.
+  - `styles`: Contains CSS modules for styling.
+  - `App.js`: Main component with routing.
+  - `index.js`: Entry point of the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run the project locally, follow these steps:
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone git@github.com:venuraperera99/PersonalDashboard.git
 
-### `npm run build`
+2. Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   cd PersonalDashboard
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
 
-### `npm run eject`
+## Running the Application
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Once the installation is complete, you can run the project:
+  
+```bash
+npm start
+```
+This will start the development server. Open http://localhost:3000 to view the application in your browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Design Decisions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The React Personal Dashboard project was designed with several key considerations in mind. Each feature of the dashboard, including UserProfile, TodoList, and Weather, was implemented as a separate component. This approach promotes modularity, scalability and reusability, making it easier to maintain and extend the application in the future. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### File Structure
+- **components**: Contains reusable components that can be easily integrated into different parts of the application.
+- **pages**: Houses the main pages of the dashboard, such as the `Home` page and `Dashboard` page.
+- **styles**: Contains CSS modules for styling components. The use of CSS modules provides scoped styles, preventing unintended style conflicts and enhancing maintainability.
 
-## Learn More
+For styling, CSS modules were used throughout the project. CSS modules provide scoped styles, ensuring that styles are applied only to specific components without affecting others. This approach also simplifies maintenance and prevents potential style conflicts.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In terms of state management, the project utilizes React's built-in `useState` hook within components. This decision was made to keep the project lightweight and avoid the complexity of integrating an external state management library. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Lastly, the application was designed with a focus on responsiveness. It is built to work seamlessly on both desktop and mobile devices, ensuring a consistent user experience across different screen sizes.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Features
+User Profile: Displays user's name, email, profile picture, and about me section.
 
-### Analyzing the Bundle Size
+Todo List: Allows users to add, delete, and mark tasks as completed. Task items are displayed in a table format.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Weather: Displays the current weather in the user's location, including temperature, description, and icon. Users can select major cities in Canada from a dropdown menu.
