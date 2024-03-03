@@ -3,52 +3,74 @@ import styles from '../styles/TodoList.module.css';
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
-  const [inputTask, setInputTask] = useState('');
+  const [newTask, setNewTask] = useState('');
 
-  const addTask = () => {
-    if (inputTask.trim() !== '') {
-      setTasks([...tasks, { id: Date.now(), task: inputTask, completed: false }]);
-      setInputTask('');
-    }
-  };
-
-  const deleteTask = (taskId) => {
-    setTasks(tasks.filter((task) => task.id !== taskId));
-  };
-
-  const toggleTask = (taskId) => {
-    setTasks(
-      tasks.map((task) =>
+  const handleToggleComplete = (taskId) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
         task.id === taskId ? { ...task, completed: !task.completed } : task
       )
     );
   };
 
+  const handleDeleteTask = (taskId) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
+  };
+
+  const handleAddTask = () => {
+    if (newTask.trim() === '') {
+      return;
+    }
+
+    const newId = tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1;
+    const newTaskItem = {
+      id: newId,
+      task: newTask.trim(),
+      completed: false,
+    };
+
+    setTasks([...tasks, newTaskItem]);
+    setNewTask('');
+  };
+
   return (
-    <div className={styles.container}>
-      <h2>Todo List</h2>
-      <div className={styles.inputContainer}>
+    <div className={styles.todoList}>
+      <h3>Todo List</h3>
+      <div className={styles.addTask}>
         <input
           type="text"
-          placeholder="Add a task..."
-          value={inputTask}
-          onChange={(e) => setInputTask(e.target.value)}
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          placeholder="Enter task..."
         />
-        <button onClick={addTask}>Add</button>
+        <button onClick={handleAddTask}>Add Task</button>
       </div>
-      <ul className={styles.taskList}>
-        {tasks.map((task) => (
-          <li key={task.id} className={task.completed ? styles.completed : ''}>
-            <input
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => toggleTask(task.id)}
-            />
-            <span>{task.task}</span>
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th>Task Name</th>
+            <th>Complete</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tasks.map((task) => (
+            <tr key={task.id}>
+              <td>{task.task}</td>
+              <td>
+                <input
+                  type="checkbox"
+                  checked={task.completed}
+                  onChange={() => handleToggleComplete(task.id)}
+                />
+              </td>
+              <td>
+                <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
