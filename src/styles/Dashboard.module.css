@@ -1,17 +1,66 @@
 .dashboard {
-    max-width: 800px;
-    margin: 20px auto;
-  }
-  
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1;
+
+}
+
+.userProfileCard,
+.weatherCard {
+  flex-basis: 50%;
+}
+
+.todoListCard {
+  flex-basis: 100%;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
   .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
-  
-  @media (max-width: 600px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
+
+  .userProfileCard,
+  .weatherCard,
+  .todoListCard {
+    flex-basis: auto;
+    max-height: none;
+    overflow-y: visible;
   }
-  
+}

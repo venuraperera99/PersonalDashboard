@@ -38,7 +38,7 @@ const Weather = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div>
       <div className={styles.location}>My Location</div>
       <div className={styles.city}>{currentWeather.name}</div>
       <div className={styles.temperature}>{Math.round(currentWeather.main.temp)}°C</div>

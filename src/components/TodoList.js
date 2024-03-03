@@ -45,7 +45,7 @@ const TodoList = () => {
         />
         <button onClick={handleAddTask}>Add Task</button>
       </div>
-      <table className={styles.table}>
+      <table className={`${styles.table} table`}>
         <thead>
           <tr>
             <th>Task Name</th>
